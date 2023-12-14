@@ -1,4 +1,3 @@
-<<<<<<< main
 # INST377 Final Project
 **Authors:** Anish Babu, Alexia Early, Jason Li
 
