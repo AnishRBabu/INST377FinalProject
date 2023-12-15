@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
-import SearchBar from "./components/SearchBar";
 import JobListings from "./components/JobListings";
 import AboutUs from "./components/AboutUs"; // This is your new component
 import Help from "./components/Help";
@@ -12,7 +11,6 @@ function App() {
     <Router>
       <div className="App">
         <NavBar />
-        <SearchBar />
         <Routes>
           <Route path="/" element={<JobListings />} />
           <Route path="/about" element={<AboutUs />} />

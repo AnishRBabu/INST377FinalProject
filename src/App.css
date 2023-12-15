@@ -1,10 +1,19 @@
-/* Navigation Bar */
 nav {
   display: flex;
   justify-content: center;
   gap: 20px;
   padding: 10px;
   background-color: #f0f0f0;
+}
+
+/* Job Listings - Updated for full width */
+.job-listings-container {
+  width: 100%;
+  margin: auto;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 15px;
 }
 
 /* Search Bar */
@@ -14,18 +23,6 @@ nav {
   padding: 10px;
 }
 
-/* Job Listings */
-.job-listings-container {
-  height: 500px; /* Increased height */
-  width: 80%;
-  max-width: 700px; /* Reduced width */
-  margin: 20px auto;
-  overflow-y: auto;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 15px;
-}
-
 /* Job Component Styles */
 .job {
   background: #fff;
@@ -33,7 +30,8 @@ nav {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 20px;
   padding: 20px;
-  max-width: 700px;
+  background-color: antiquewhite;
+  /* max-width: 700px; */
 }
 
 .job-title {
@@ -75,4 +73,48 @@ nav {
   padding: 10px 20px;
 }
 
+.job-listings-container {
+  width: 70%;
+  margin: auto;
+  /* Additional styling */
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -30%; /* Start off-screen to the right */
+  width: 30%;
+  height: 100%;
+  background-color: #f4f4f4;
+  transition: right 0.3s; /* Smooth transition for sidebar */
+  padding: 10px; /* Padding for internal elements */
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /* Shadow for aesthetics */
+  overflow-y: auto; /* In case of scrolling */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Updated for better browser support */
+  padding-top: 20px;
+}
+
+.sidebar-visible {
+  right: 0; /* Bring the sidebar into view */
+}
+
+.job-listings-full-width-container {
+  width: 100%; /* Job listings take the full width when sidebar is hidden */
+  transition: width 0.3s; /* Optional transition for width adjustment */
+}
+
+/* When sidebar is visible, job listings adjust their width */
+.sidebar-visible + .job-listings-container {
+  width: 70%; /* Adjust width to take up the remaining space */
+}
+
+.toggle-sidebar-button {
+  position: fixed;
+  top: 10px; /* Adjust as needed */
+  right: 10px; /* Place near the sidebar */
+  z-index: 1000; /* Ensure it's above other elements */
+}
 /* ... Add other styles as needed ... */
