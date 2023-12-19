@@ -7,6 +7,9 @@ Our goal with this project was to take data about job openings in Germany access
 ### Target Browsers
 This project is meant to work on any laptop or PC browser (Chrome, Safari, Firefox, etc.) with no issue. Attempting to load on iPhones, Androids, or tablets will not work due to formatting issues.
 
+### Future Development
+In the future, we hope to expand our reach beyond Germany and continue to include other European countries in order to expand our reach. This will allow us to reach a much larger audience for those seeking jobs in countries like France or Italy. With further development we could also explore a messaging interface between applicants and recruiters.
+
 ## User Manual
 How to run:
 - Clone repository from GitHub
@@ -19,7 +22,15 @@ How to run:
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### API: https://www.arbeitnow.com/api/job-board-api
+`FETCH ("https://www.arbeitnow.com/api/job-board-api")` Retrieves information including:
+- Job Title
+- Description
+- Company
+- Location
+- Job Type
+- Additional Tags
+- Link to Apply
 
 In the project directory, you can run:
 
