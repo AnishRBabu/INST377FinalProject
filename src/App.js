@@ -4,6 +4,7 @@ import NavBar from "./components/NavBar";
 import JobListings from "./components/JobListings";
 import AboutUs from "./components/AboutUs"; // This is your new component
 import Help from "./components/Help";
+import Quiz from "./components/Quiz";
 import "./App.css";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<JobListings />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/help" element={<Help />} />
+          <Route path="/quiz" element={<Quiz/>} />
         </Routes>
       </div>
     </Router>
