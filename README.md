@@ -32,6 +32,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Additional Tags
 - Link to Apply
 
+This project also uses supabase to collect and store data within a database.
+
 In the project directory, you can run:
 
 `npm start`
