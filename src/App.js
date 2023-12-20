@@ -4,10 +4,10 @@ import NavBar from "./components/NavBar";
 import JobListings from "./components/JobListings";
 import AboutUs from "./components/AboutUs"; // This is your new component
 import Help from "./components/Help";
+import Quiz from "./components/Quiz";
 import "./App.css";
 import SignUpLogin from "./components/SignUpLogin";
 import UserProfile from "./components/UserProfile";
-import Quiz from "./components/Quiz";
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState(null);
