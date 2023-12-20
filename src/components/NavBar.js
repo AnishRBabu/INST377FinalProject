@@ -7,7 +7,7 @@ function NavBar({ loggedInUser }) {
       <Link to="/">Home</Link>
       <Link to="/about">About</Link>
       <Link to="/help">Help</Link>
-      <Link to="/quiz">Quiz</Link>
+      <Link to="/quiz">Take the job quiz!</Link>
       {loggedInUser ? (
         <Link to="/user-profile">{loggedInUser}</Link>
       ) : (
