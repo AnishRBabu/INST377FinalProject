@@ -98,3 +98,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### Testing
+We utilize jest-dom, which adds custom jest matchers for asserting on DOM nodes. It allows you to do tests like:
+- expect(element).toHaveTextContent(/react/i)
+- learn more: https://github.com/testing-library/jest-dom
