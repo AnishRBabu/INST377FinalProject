@@ -5,10 +5,11 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  background-color: antiquewhite;
 }
 
 .card {
-  background: #fff;
+  background-color: antiquewhite;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 2rem;
@@ -24,4 +25,3 @@
   line-height: 1.6;
 }
 
-/* You can add more styling here for the card titles and text */
