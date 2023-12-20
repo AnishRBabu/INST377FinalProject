@@ -2,12 +2,14 @@ import React, { useState, useEffect } from "react";
 import Job from "./Job";
 import CategoryDropdown from "./CategoryDropdown";
 import SearchBar from "./SearchBar"; // Make sure to create this component
+import Fuse from "fuse.js"; // Import Fuse.js
 
 function JobListings() {
   const [jobs, setJobs] = useState([]);
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("");
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     async function fetchJobs() {
@@ -34,34 +36,44 @@ function JobListings() {
     setSelectedCategory(newCategory);
   };
 
+  const handleSearch = (term) => {
+    setSearchTerm(term);
+  };
+
   const toggleSidebar = () => {
     setIsSidebarVisible(!isSidebarVisible);
   };
 
-  const filteredJobs = selectedCategory
-    ? jobs.filter((job) => job.tags.includes(selectedCategory))
+  // Configure Fuse.js for fuzzy searching
+  const fuse = new Fuse(jobs, {
+    keys: ["title", "description", "company_name", "tags"],
+    threshold: 0.2, // Adjust the threshold for fuzziness
+  });
+
+  // Perform fuzzy search only when searchTerm is not empty
+  const searchResults = searchTerm
+    ? fuse.search(searchTerm).map((result) => result.item)
     : jobs;
+
+  const filteredJobs = selectedCategory
+    ? searchResults.filter((job) => job.tags.includes(selectedCategory))
+    : searchResults;
 
   return (
     <div className="job-listings-layout">
-      {/* Toggle button for the filter tray */}
       <button className="toggle-sidebar-button" onClick={toggleSidebar}>
         {isSidebarVisible ? "Hide Filters" : "Show Filters"}
       </button>
 
-      {/* Filter tray sidebar */}
       <div className={`sidebar ${isSidebarVisible ? "sidebar-visible" : ""}`}>
-        {/* Search bar moved inside the sidebar */}
-        <SearchBar />
+        <SearchBar onSearch={handleSearch} />
         <CategoryDropdown
           categories={categories}
           selectedCategory={selectedCategory}
           onCategoryChange={handleCategoryChange}
         />
-        {/* Additional filters can be added here */}
       </div>
 
-      {/* Job listings container adjusted for full width */}
       <div className="job-listings-full-width-container">
         {filteredJobs.map((job) => (
           <Job

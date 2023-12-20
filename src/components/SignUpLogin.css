@@ -1,0 +1,67 @@
+.signup-login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: antiquewhite; /* Or any background color you prefer */
+}
+
+.form-container {
+  text-align: center;
+  width: 100%;
+  max-width: 400px; /* Adjust width as needed */
+}
+
+.input-field,
+.submit-button,
+.tab,
+.toggle-button {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px; /* Space between fields */
+  border: none;
+  border-radius: 5px;
+  font-size: 18px; /* Larger font size */
+}
+
+.tab-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.tab {
+  background-color: #34495e; /* Default non-active background color */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 5px;
+  font-size: 18px;
+  transition: background-color 0.3s; /* Smooth transition for color change */
+}
+
+.tab.active {
+  background-color: #27ae60; /* Active tab background color */
+}
+
+.submit-button,
+.toggle-button {
+  background-color: #27ae60; /* Green background */
+  color: white;
+  cursor: pointer;
+  border: none;
+  display: block; /* Ensure it's block-level for full width */
+}
+
+.submit-button:hover,
+.toggle-button:hover {
+  background-color: #2ecc71; /* Lighter green on hover */
+}
+
+/* Ensure body has no margin so that flex container can truly center vertically */
+body {
+  margin: 0;
+}
